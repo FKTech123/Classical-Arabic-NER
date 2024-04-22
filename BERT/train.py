@@ -18,9 +18,9 @@ from config import Config
 class NERTrainer:
     def __init__(self):
         self.cfg = Config()
-        self.data_reader = DataReader("/content/data.txt")
+        self.data_reader = DataReader("/data/data.txt")
         self.data, _, _ = self.data_reader.read_data_bert()
-        self.label_list = read_labels('/content/label_list.txt')
+        self.label_list = read_labels('/data/label_list.txt')
 
         self.label_map = get_label_map(self.label_list)
         self.inv_label_map = get_inv_label_map(self.label_list)
